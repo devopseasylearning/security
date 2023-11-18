@@ -1,0 +1,31 @@
+APPLICATION SECURITY:
+   code ---> image ----> container
+     * code:
+           dev_laptop(Sonarlint) ---> github(github code scanning) ---> sonarqube(vulnerability & security hotspot)
+           ---> 
+     * image:
+           - do not use root as default user
+           - give ownership of important files to root 
+           - only use ceertify image as base image in our dockerfile
+           - only expose ports that are required
+           - only use privielege port (ports above 1024) 
+           - never use  know default ports ( example 8080 for jenkins or tomcat) 
+           - never use ADD, curl or wget to directly download files to our docker container 
+     * container:
+          - secure the enviromenet containers leave
+          - only add required people to the docker group 
+          - continue scanning of containers
+          - drop root user on containers
+          - implement role base access control for environment containers leave.
+        
+INFRASTRUCTURE SECURITY:
+    - servers
+    - storage 
+    - cloud platform 
+    - network enviroment 
+    - clusters
+    - Databases 
+    - repositories 
+    - artifactories 
+    - registries 
+    
